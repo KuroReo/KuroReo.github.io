@@ -8,7 +8,6 @@ function updateClock() {
 }
 updateClock(); // Memulai fungsi jam
 
-var currentRow;
 var currentEditRow; // Variabel untuk menyimpan baris yang sedang diedit
 
 // Fungsi untuk menambahkan data ke tabel
@@ -27,13 +26,60 @@ function addDataToTable(nim, nama, alamat) {
     cell4.innerHTML = '<button class="btn btn-primary edit" data-toggle="modal" data-target="#editModal">Edit</button> <button class="btn btn-danger delete" onclick="deleteData(this)">Hapus</button>';
 }
 
+// Fungsi untuk sorting tabel
+function sortTable(table, column, ascending = true) {
+    const dirModifier = ascending ? 1 : -1;
+    const tbody = table.querySelector('tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    const sortedRows = rows.sort((a, b) => {
+      const aContent = a.querySelector(`td:nth-child(${column + 1})`).textContent.trim();
+      const bContent = b.querySelector(`td:nth-child(${column + 1})`).textContent.trim();
+  
+      if (column === 0) {
+        return dirModifier * (parseInt(aContent, 10) - parseInt(bContent, 10));
+      } else {
+        return dirModifier * aContent.localeCompare(bContent);
+      }
+    });
+  
+    tbody.innerHTML = '';
+    sortedRows.forEach(row => tbody.appendChild(row));
+  }
+  
+  // Tambahkan event listener untuk tombol sorting
+  document.querySelectorAll('#sort-nim, #sort-nama, #sort-alamat').forEach(button => {
+    button.addEventListener('click', () => {
+      consttable = document.getElementById('data-table');
+      const column = Array.from(button.parentNode.children).indexOf(button);
+      const currentAscending = button.classList.contains('ascending');
+  
+      // Hapus klas 'ascending' dan 'descending' dari semua tombol
+      Array.from(button.parentNode.children).forEach(child => child.classList.remove('ascending', 'descending'));
+  
+      // Tambahkan klas 'ascending' atau 'descending' ke tombol saat ini
+      button.classList.toggle('ascending', !currentAscending);
+      button.classList.toggle('descending', currentAscending);
+  
+      // Panggil fungsi sortTable
+      sortTable(table, column, !currentAscending);
+    });
+  });
+  
+  // Tambahkan fungsi untuk reset sorting saat tombol tambah data diklik
+  document.getElementById('btnTambah').addEventListener('click', () => {
+    // Reset semua klas 'ascending' dan 'descending'
+    Array.from(document.querySelectorAll('#sort-nim, #sort-nama, #sort-alamat')).forEach(button => {
+      button.classList.remove('ascending', 'descending');
+    });
+  });
+  
+
 // Fungsi untuk menghapus data
-function deleteData(button) {
-    var row = button.parentNode.parentNode;
-    row.parentNode.removeChild(row);
+$(document).on('click', '.delete', function() {
+    $(this).closest('tr').remove();
     $('#toastDel').toast({animation: true});
     $('#toastDel').toast('show');
-}
+});
 
 // Fungsi untuk menangani form submit
 document.getElementById('data-form').addEventListener('submit', function(event) {
@@ -78,4 +124,12 @@ document.getElementById('saveChanges').addEventListener('click', function() {
 document.addEventListener("DOMContentLoaded", function() {
     var container = document.querySelector('.container');
     container.style.height = window.innerHeight + 'px';
+});
+
+// Untuk menunjukkan toast setelah menekan button tambah
+$(document).ready(function(){
+    $("#btnTambah").click(function(){
+        $('#toastTmb').toast({animation: true});
+        $('#toastTmb').toast('show');
+    });
 });
