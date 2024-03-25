@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    font-family: arial;
+}
+
+#bungkus {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#logo img {
+    width: 80px;
+}
+
+#menu {
+    margin-top: 50px;
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 15px;
+}
+
+#menu ul li a {
+    color: #333333;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+#menu ul li a:hover{
+    border-bottom: 5px solid dodgerblue;
+}
+
+#banner {
+    clear: both;
+}
+
+#banner img {
+    width: 1000px;
+}
+
+#highlight {
+    display: flex;
+    justify-content: space-between;
+}
+
+.box {
+    float: left;
+}
+
+.box img {
+    width: 300px;
+}
+
+#subtitle {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sub {
+    float: left;
+}
+
+.sub img {
+    width: 400px;
+    margin-right: 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+#client {
+    display: flex;
+    justify-content: space-between;
+}
+
+#client .cli img {
+    width: 75px;
+}
+
+#testimonial {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tes {
+    background: gray;
+    width: 475px;
+}
+
+.tes img {
+    width: 80px;
+    border-radius: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tes h3 {
+    text-align: center;
+}
+
+.tes p {
+    text-align: center;
+}
+
+#subscribe {
+    background: deeppink;
+    width: 850px;
+    height: 170px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#subscribe p {
+    margin-top: 20px;
+    color: wheat;
+    text-shadow: 2px;
+    font-size: 20px;
+}
+
+#subscribe input{
+    width:  400px;
+    height: 38px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+#subscibe button {
+    width: 150px;
+}
+
+#corporation {
+    background: #333333;
+    height: 200px;
+}
+
+#corporation p {
+    font-size: 20px;
+    color: white;
+}
+
+.cor {
+    float: left;
+}
+
+.corp img {
+    width: 30px;
+    float: right;
+    margin: 0 10px;
+}
