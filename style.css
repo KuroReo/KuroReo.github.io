@@ -1,165 +1,86 @@
-body {
-    margin: 0;
-    font-family: arial;
-}
-
-#bungkus {
-    width: 1000px;
-    margin: 0 auto;
-}
-
-#navbar {
-    display: flex;
-    justify-content: space-between;
-}
-
-
-#logo img {
-    width: 80px;
-}
-
-#menu {
-    margin-top: 50px;
-}
-
-#menu ul {
+html, body {
+    width: 100%;
+    height: 100%;
     margin: 0;
     padding: 0;
+    overflow: auto; /* Mengizinkan pengguliran */
 }
 
-#menu ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 15px;
+
+body {
+    background-image: linear-gradient( 180.7deg,  rgba(0,213,255,1) 2.5%, rgba(79,255,255,1) 97.7% );
 }
 
-#menu ul li a {
-    color: #333333;
-    text-decoration: none;
-    padding: 5px 0;
+table {
+    background-color: white;
+    border-radius: 10px;
 }
 
-#menu ul li a:hover{
-    border-bottom: 5px solid dodgerblue;
+form {
+    background-color: white;
+    border-radius: 10px;
+    padding: 5px;
 }
 
-#banner {
-    clear: both;
-}
-
-#banner img {
-    width: 1000px;
-}
-
-#highlight {
+.container mt-5 {
+    height: 100vh; /* Menggunakan 100% dari viewport height */
+    margin: 0;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column; /* Mengubah arah flex items menjadi vertikal */
+    justify-content: stretch; /* Menengahkan konten secara vertikal */
+    align-content: center;
 }
 
-.box {
-    float: left;
+#realtime-clock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 7px;
+    padding-right: 16px;
+    color: #374151; /* Warna teks jam */
+    height: 50px;
+    line-height: 50px;
 }
 
-.box img {
-    width: 300px;
+#Academia {
+    font-size: 35px;
+    font-weight: 300;
+    font-style: normal;
+    height: 50px;
+    line-height: 50px;
+    color:#374151;
 }
 
-#subtitle {
-    display: flex;
-    justify-content: space-between;
+.navbar navbar-expand-lg navbar-light bg-light {
+    background-color:#DEDEDE;
 }
 
-.sub {
-    float: left;
-}
-
-.sub img {
-    width: 400px;
-    margin-right: 20px;
-}
-
-h2 {
-    text-align: center;
-}
-
-#client {
-    display: flex;
-    justify-content: space-between;
-}
-
-#client .cli img {
-    width: 75px;
-}
-
-#testimonial {
-    display: flex;
-    justify-content: space-between;
-}
-
-.tes {
-    background: gray;
-    width: 475px;
-}
-
-.tes img {
-    width: 80px;
+img {
     border-radius: 50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    width: 50px;
+    margin-right: 10px;
 }
 
-.tes h3 {
-    text-align: center;
+h3 {
+    margin-block-end: 0em;
 }
 
-.tes p {
-    text-align: center;
-}
-
-#subscribe {
-    background: deeppink;
-    width: 850px;
-    height: 170px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
-#subscribe p {
-    margin-top: 20px;
-    color: wheat;
-    text-shadow: 2px;
-    font-size: 20px;
-}
-
-#subscribe input{
-    width:  400px;
-    height: 38px;
-    display: inline-block;
-    margin-bottom: 5px;
-}
-
-#subscibe button {
-    width: 150px;
-}
-
-#corporation {
-    background: #333333;
-    height: 200px;
-}
-
-#corporation p {
-    font-size: 20px;
+#toastTmb .toast-header{
+    background-color: #1dab6f;
     color: white;
 }
 
-.cor {
-    float: left;
+#toastEdit .toast-header{
+    background-color: #00aedb;
+    color: white;
 }
 
-.corp img {
-    width: 30px;
-    float: right;
-    margin: 0 10px;
+#toastDel .toast-header{
+    background-color: #ff4747;
+    color: white;
+}
+
+#toastWar .toast-header{
+    background-color: #ffee92;
+    color: white;
 }
